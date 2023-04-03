@@ -49,6 +49,8 @@
     <xacro:property name="config_kinematics_parameters" value="${xacro.load_yaml(kinematics_parameters_file)}"/>
     <xacro:property name="config_physical_parameters" value="${xacro.load_yaml(physical_parameters_file)}"/>
     <xacro:property name="config_visual_parameters" value="${xacro.load_yaml(visual_parameters_file)}"/>
+    <xacro:property name="open_gripper_parameters" value="${xacro.load_yaml(open_gripper_script)}"/>
+    <xacro:property name="close_gripper_parameters" value="${xacro.load_yaml(close_gripper_script)}"/>
 
     <!-- Extract subsections from yaml dictionaries -->
     <xacro:property name="sec_limits" value="${config_joint_limit_parameters['joint_limits']}"/>
@@ -189,5 +191,9 @@
 
     <!--KINEMATICS HASH-->
     <xacro:property name="kinematics_hash" value="${sec_kinematics['hash']}" scope="parent"/>
+
+    <!--GRIPPER COMMANDS -->
+    <xacro:property name="open_gripper_command" value="${open_gripper_parameters['open_gripper']}" scope="parent"/>
+    <xacro:property name="close_gripper_command" value="${close_gripper_parameters['close_gripper']}" scope="parent"/>
   </xacro:macro>
 </robot>
