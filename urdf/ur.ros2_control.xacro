@@ -18,7 +18,9 @@
     reverse_port:=50001
     script_sender_port:=50002
     reverse_ip:=0.0.0.0
-    script_command_port:=50004">
+    script_command_port:=50004
+    open_gripper_script
+    close_gripper_script">
 
     <ros2_control name="${name}" type="system">
       <hardware>
@@ -44,6 +46,8 @@
           <param name="script_sender_port">${script_sender_port}</param>
           <param name="reverse_ip">${reverse_ip}</param>
           <param name="script_command_port">${script_command_port}</param>
+          <param name="open_gripper_script">${open_gripper_script}</param>
+          <param name="close_gripper_script">${close_gripper_script}</param>
           <param name="tf_prefix">"${tf_prefix}"</param>
           <param name="non_blocking_read">0</param>
           <param name="servoj_gain">2000</param>
@@ -300,6 +304,16 @@
         <gpio name="zero_ftsensor">
           <command_interface name="zero_ftsensor_cmd"/>
           <command_interface name="zero_ftsensor_async_success"/>
+        </gpio>
+
+        <gpio name="open_gripper">
+          <command_interface name="open_gripper_cmd"/>
+          <command_interface name="open_gripper_async_success"/>
+        </gpio>
+
+        <gpio name="close_gripper">
+          <command_interface name="close_gripper_cmd"/>
+          <command_interface name="close_gripper_async_success"/>
         </gpio>
 
         <gpio name="system_interface">

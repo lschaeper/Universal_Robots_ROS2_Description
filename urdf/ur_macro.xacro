@@ -83,6 +83,8 @@
     tool_tcp_port:=54321
     robot_ip:=0.0.0.0
     script_filename:=to_be_filled_by_ur_robot_driver
+    open_gripper_script:=to_be_filled_by_ur_robot_driver
+    close_gripper_script:=to_be_filled_by_ur_robot_driver
     output_recipe_filename:=to_be_filled_by_ur_robot_driver
     input_recipe_filename:=to_be_filled_by_ur_robot_driver
     reverse_port:=50001
@@ -111,6 +113,8 @@
       sim_gazebo="${sim_gazebo}"
       sim_ignition="${sim_ignition}"
       script_filename="${script_filename}"
+      open_gripper_script="${open_gripper_script}"
+      close_gripper_script="${close_gripper_script}"
       output_recipe_filename="${output_recipe_filename}"
       input_recipe_filename="${input_recipe_filename}"
       tf_prefix=""
